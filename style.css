@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-container: #e8e8e8;
+  --bg-card: #fff;
+  --primary-color: #7c17b4;
+  --text-color: #000;
+}
+
+.dark {
+  --bg-container: #232323;
+  --bg-card: #1a1a1a;
+  --text-color: #fff;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-container);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+}
+
+.box {
+  width: 320px;
+
+  min-height: 200px;
+
+  background-color: var(--bg-card);
+
+  border-radius: 8px;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
+
+  color: var(--text-color);
+  padding: 2rem 1.2rem;
+
+  position: relative;
+}
+
+.area {
+  background-color: #000;
+
+  border-radius: 30px;
+  width: 60px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+
+  width: 100%;
+
+  padding-inline: 5px;
+}
+
+.checkbox {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  height: 35px;
+  border-radius: 30px;
+  width: 100px;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.theme {
+  font-size: 16px;
+}
+
+label .ball {
+  height: 20px;
+  width: 20px;
+  top: -2px;
+  left: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  transform: translateX(0px);
+  transition: all 0.3s ease;
+
+}
+
+.checkbox:checked+label .ball {
+  transform: translateX(30px);
+}
+
+.sun {
+  color: yellow;
+}
+
+.moon {
+  color: purple;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 200;
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+
+  text-transform: uppercase;
+
+
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.text {
+  margin-top: 1rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.lines {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 2rem;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: #dedede;
+}
+
+.icon {
+  font-size: 24px;
+  color: #dedede;
+}
+
+.copy {
+  font-size: 20px;
+}
+
+.quotes {
+  margin-inline: 1rem;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--bg-card);
+
+  border-radius: 50%;
+  border: none;
+
+  height: 2.2rem;
+  width: 2.2rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: -1rem;
+
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+button:active {
+  filter: brightness(1.2);
+}
+
+.area-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  position: relative;
+}
+
+.message {
+  position: absolute;
+  background-color: #a02dde;
+  border-radius: 0.25rem;
+  color: #fff;
+
+  top: -2.5rem;
+  right: -4rem;
+
+  font-size: 8px;
+  padding: 0.2rem;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition: all 0.3s ease;
+
+
+}
+
+.message.show {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.card {
+  transition: all 0.3s ease;
+  animation: fromBottom 0.5s ease backwards;
+  animation-delay: 1s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.developer {
+  color: var(--text-color);
+  margin-top: 4rem;
+}
+
+.developer a {
+  color: var(--primary-color);
+
+}
+
+@keyframes fromBottom {
+
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    width: 100%;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
